@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="mt-3">
+        <h1>Thêm danh mục sách</h1>
+    </div>
+    <form #form="ngForm" (submit)="onSubmit()">
+        <div class="mt-2">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="name" class="form-control" id="name" placeholder="Tên danh mục" name="name" [(ngModel)]="addCategories.name"
+                       >
+                    <label for="name">Tên danh mục</label>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="urlHandle" class="form-control" id="urlHandle" placeholder="Đường dẫn" name="urlHandle" [(ngModel)]="addCategories.urlHandle"
+                        >
+                    <label for="urlHandle">Đường dẫn</label>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2">
+            <button class="btn btn-primary">Thêm</button>
+        </div>
+    </form>
+</div>
