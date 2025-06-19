@@ -24,7 +24,7 @@ export class AddBrand implements OnDestroy {
       featuredImage: ''
     }
   }
-
+//submit form
   onSubmit(): void {
     this.brandSubscription = this.brandServices.addBrand(this.addBrand).subscribe({
       next: (response) => {
