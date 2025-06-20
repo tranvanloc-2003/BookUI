@@ -12,6 +12,7 @@
                         <th>Mã danh mục</th>
                         <th>Tên danh mục</th>
                         <th>Đường dẫn</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,6 +20,7 @@
                         <td>{{category.id}}</td>
                         <td>{{category.name}}</td>
                         <td>{{category.urlHandle}}</td>
+                        <td><a [routerLink]="['/categories/update',category.id]" routerLinkActive="router-link-active" class="btn btn-primary" >Sửa</a></td>
                     </tr>
 
                 </tbody>

@@ -16,6 +16,9 @@
                     <th scope="col">Tác giả</th>
                     <th scope="col">Hình ảnh</th>
                     <th scope="col">Đường dẫn</th>
+                    <th scope="col">Danh mục</th>
+                    <th scope="col">Thương hiệu</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +29,14 @@
                     <td>{{book.price}}</td>
                     <td><img [src]="book.featuredImage" alt="{{book.title}}" width="50"></td>
                     <td>{{book.urlHandle}}</td>
+                    <td><span *ngFor="let category of book.categoriesDtos">
+                            <span class="badge bg-secondary me-2">{{category.name}}</span>
+                        </span></td>
+                    <td><span *ngFor="let brand of book.brandDtos">
+                            <span class="badge bg-secondary me-2">{{brand.nameBrand}}</span>
+                        </span></td>
+                    <td>
+                        <a [routerLink]="['/books/update/', book.id]" class="btn btn-primary">Sửa</a>
                 </tr>
             </tbody>
         </table>

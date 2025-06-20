@@ -85,7 +85,7 @@
             <div class="mt-3">
                 <label for="category" class="form-label">Categories</label>
                 <ng-container *ngIf="categories$ | async as categories">
-                    <select name="category" id="category" class="form-control" multiple [(ngModel)]="addBook.categoriesId">
+                    <select name="category" id="category" class="form-control" multiple [(ngModel)]="addBook.CategoriesId">
                         <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
                     </select>
                 </ng-container>
@@ -93,7 +93,7 @@
             <div class="mt-3">
                 <label for="brand" class="form-label">Brands</label>
                 <ng-container *ngIf="brands$ | async as brands">
-                    <select name="brand" id="brand" class="form-control" multiple [(ngModel)]="addBook.brandId" >
+                    <select name="brand" id="brand" class="form-control" multiple [(ngModel)]="addBook.CategoriesId" >
                         <option *ngFor="let brand of brands" [value]="brand.id">{{brand.nameBrand}}</option>
                     </select>
                 </ng-container>

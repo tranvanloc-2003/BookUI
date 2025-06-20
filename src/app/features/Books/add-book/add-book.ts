@@ -32,8 +32,8 @@ export class AddBook implements OnDestroy,OnInit {
       urlHandle:'',
       price: 0,
       isVisible: true,
-      categoriesId: [],
-      brandId: []
+      CategoriesId: [],
+      BrandId: []
     }
   }
   ngOnInit(): void {

@@ -1,1 +1,48 @@
-<p>update-categories works!</p>
+<div class="container">
+    <div class="mt-3">
+        <h1>Thêm danh mục sách</h1>
+    </div>
+    <ng-container *ngIf="category; else notFound">
+        <form #form="ngForm" (submit)="onUpdateForm()">
+             <div class="mt-2">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="categoriesId" placeholder="Mã danh mục" name="categoriesId" [(ngModel)]="category.id" disabled
+                       >
+                    <label for="id">Mã danh mục</label>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="name" placeholder="Tên danh mục" name="name" [(ngModel)]="category.name"
+                       >
+                    <label for="name">Tên danh mục</label>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="urlHandle" placeholder="Đường dẫn" name="urlHandle" [(ngModel)]="category.urlHandle"
+                        >
+                    <label for="urlHandle">Đường dẫn</label>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2 d-flex">
+            <button class="btn btn-primary">Lưu</button>
+            <button class="btn btn-danger ms-2" (click)="onDeleteForm()">Xóa</button>
+        </div>
+    </form>
+    </ng-container>
+    
+</div>
+<ng-template #notFound>
+    <div class="container">
+        <div class="alert alert-danger mt-3" role="alert">
+            Danh mục không tồn tại
+        </div>
+    </div>
+</ng-template>

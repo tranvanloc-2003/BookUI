@@ -1,1 +1,58 @@
-<p>update-brand works!</p>
+
+<div class="container">
+    <div class="mt-3">
+        <div class="mt-2">
+            <h1>Chỉnh sửa thương hiệu</h1>
+        </div>
+        <ng-container *ngIf=" brand; else notFound">
+            <form #form="ngForm" (submit)="onUpdateForm()">
+            <div class="mt-3">
+                <div class="col-md">
+                    <div class="form-floating">
+                       <input type="text" class="form-control" id="brandId" placeholder="brandId" disabled [(ngModel)]="brand.id" name="brandId" required readonly>
+                        <label for="id">Mã thương hiệu</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="nameBrand" placeholder="Tên thương hiệu" [(ngModel)]="brand.nameBrand" name="nameBrand" required>
+                        <label for="nameBrand">Tên thương hiệu</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="featuredImage" placeholder="Hình ảnh" [(ngModel)]="brand.featuredImage" name="featuredImage" required>
+                        <label for="featuredImage">Hình ảnh</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="urlHandle" placeholder="Đường dẫn" [(ngModel)]="brand.urlHandle" name="urlHandle" required>
+                        <label for="urlHandle">Đường dẫn</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3 d-flex">
+            <button type="submit" class="btn btn-primary">Lưu</button>
+            <button type="button" (click)="onDeleteForm()" class="btn btn-danger ms-3">Xóa</button>
+        </div>
+
+        </form>
+        </ng-container>
+        
+    </div>
+</div>
+<ng-template #notFound>
+    <div class="container">
+        <div class="mt-3">
+            <h1>Không tìm thấy thương hiệu</h1>
+            <p>Thương hiệu bạn đang tìm kiếm không tồn tại.</p>
+        </div>
+    </div>
+</ng-template>

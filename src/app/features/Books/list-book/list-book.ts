@@ -16,6 +16,9 @@ export class ListBook implements OnInit{
    books$?: Observable<BookRequestModel[]>;
   ngOnInit(): void {
    this.books$ = this.bookServices.getAllBooks();
+   
+  
+
   }
 
 }

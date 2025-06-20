@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BrandRequestModel } from '../models/brand-request-model';
 import { environment } from '../../../../environments/environment';
+import { UpdateBrandRequest } from '../models/update-brand-request';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class Brand {
   addBrand(brand: BrandRequestModel): Observable<void> {
     return this.http.post<void>(`${environment.urlLocalhost}/api/brand`, brand);
   }
-  updateBrand(id: string, brand: BrandRequestModel): Observable<BrandRequestModel> {
+  updateBrand(id: string, brand: UpdateBrandRequest): Observable<BrandRequestModel> {
     return this.http.put<BrandRequestModel>(`${environment.urlLocalhost}/api/brand/${id}`, brand);
   }
   deleteBrand(id: string): Observable<BrandRequestModel> {

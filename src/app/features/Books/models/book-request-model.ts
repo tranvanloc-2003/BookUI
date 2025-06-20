@@ -1,3 +1,6 @@
+import { BrandRequestModel } from "../../Brands/models/brand-request-model";
+import { CategoriesRequestModel } from "../../Categories/models/categories-request-model";
+
 export interface BookRequestModel {
 id:string;
 title:string;
@@ -9,6 +12,6 @@ publicshedDate:Date;
 urlHandle:string;
 price:number;
 isVisible:boolean;
-categoriesId:string[];
-brandsId:string[];
+categoriesDtos:CategoriesRequestModel[];
+brandDtos:BrandRequestModel[];
 }

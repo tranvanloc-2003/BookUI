@@ -19,13 +19,13 @@ export const routes: Routes = [
         component: AddCategories
     },
     {
-        path: 'categories/:id',
+        path: 'categories/update/:id',
         component: UpdateCategories
     },
     //brand
     { path: 'brands', component: ListBrand },
     { path: 'brands/add', component: AddBrand },
-    { path: 'brands/:id', component: UpdateBrand },
+    { path: 'brands/update/:id', component: UpdateBrand },
     //books
-    {path:'books', component: ListBook},{path:'books/add',component:AddBook},{path:'books/:id',component :UpdateBook}
+    {path:'books', component: ListBook},{path:'books/add',component:AddBook},{path:'books/update/:id',component :UpdateBook}
 ];
